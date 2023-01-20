@@ -1,6 +1,6 @@
 import streamlit
 import snowflake.connector
-from urllib import URLError
+from urllib.error import URLError
 import requests
 
 streamlit.stop()
