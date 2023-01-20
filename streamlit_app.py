@@ -42,7 +42,7 @@ except URLError as e:
 # Snowflake related stuff
 def get_fruit_load_list():
   with my_cnx.cursor() as cursor:
-    my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
+    cursor.execute("SELECT * FROM FRUIT_LOAD_LIST")
     return my_cur.fetchall()
 
 if streamlit.button('Get Fruit Load List'):
@@ -53,7 +53,7 @@ if streamlit.button('Get Fruit Load List'):
 
 def insert_row_snowflake(new_fruit):
    with my_cnx.cursor() as cursor:
-     my_cur.execute("insert into fruit_load_list values ('"+ new_fruit +"')")
+     cursor.execute("insert into fruit_load_list values ('"+ new_fruit +"')")
      return "Thanks for adding " + new_fruit
 
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
